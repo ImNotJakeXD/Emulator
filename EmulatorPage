@@ -71,40 +71,6 @@
             color: #2E8B57;
         }
 
-        /* Password Form */
-        .password-form {
-            max-width: 400px;
-            margin: 100px auto;
-            background-color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .password-form input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .password-form input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .password-form input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
         /* Search Bar */
         .search_bar {
             width: 100%;
@@ -119,16 +85,7 @@
     </style>
 </head>
 <body>
-
-
-<div class="password-form" id="passwordForm">
-    <form id="passwordValidation">
-        <label for="password">Enter the password to access TheGateway:</label><br>
-        <input type="password" id="password" name="password" required><br>
-        <input type="submit" value="Submit">
-    </form>
-    <p id="passwordError" style="color: red; display: none;">Incorrect password. Please try again.</p>
-    <p id="lockoutMessage" style="color: red; display: none;">You are locked out. Please try again after 24 hours.</p>
+s.</p>
 </div>
 
 

@@ -1,43 +1,50 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emulators</title>
     <style>
         /* General Styles */
         body {
-            background-color: #575757;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #fafafa;
             color: #333;
+            box-sizing: border-box;
         }
         
-        /* Header */
         header {
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 15px;
-            font-size: 1.2em;
+            padding: 20px;
+            font-size: 1.5em;
             font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         /* Banner Message */
         .banner-message {
             background-color: #FFD700;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             font-size: 1.1em;
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Link Container */
         .link-container {
-            display: none;
+            display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
+            justify-content: space-around;
+            gap: 30px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
         }
 
@@ -45,17 +52,28 @@
         .link-item {
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 22%;
-            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            padding: 20px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .link-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
 
         .link-item img {
             width: 100%;
             height: auto;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .link-item img:hover {
+            transform: scale(1.05);
         }
 
         .link-item a {
@@ -75,70 +93,22 @@
         .search_bar {
             width: 100%;
             max-width: 600px;
-            padding: 10px;
-            margin: 20px auto;
+            padding: 12px;
+            margin: 30px auto;
             border: 1px solid #ccc;
             border-radius: 4px;
-            display: block;
             font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-</p>
-</div>
-</div>
-<!-- Main content of the page -->
-<div class="content">
-    <h1>Emulators</h1>
-<script>
-  const searchInput = document.getElementById('search-input');
-  const gameList = document.getElementById('game-list');
-  const games = gameList.children;
-
-  searchInput.addEventListener('input', (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    for (let i = 0; i < games.length; i++) {
-      const game = games[i];
-      const gameText = game.textContent.toLowerCase();
-      if (gameText.includes(searchTerm)) {
-        game.style.display = 'block';
-      } else {
-        game.style.display = 'none';
-      }
-    }
-  });
-</script>
-</body>
-</html>
-<div class="link-item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Desmume.png" alt="DeSmuMe">
-        <a href="https://github.com/TASEmulators/desmume/releases/download/release_0_9_13/desmume-0.9.13-win64.zip">DeSmuMe (.nds,.gba emulator)</a>
-    </div>
-    <div class="link-item">
-        <img src="https://images.sftcdn.net/images/t_app-icon-m/p/914c2226-4d36-4909-b8f6-7dbaaa27c2c6/1517778662/mgba-windows-1517778662.jpg">
-        <a href="https://github.com/IMADEAGAMEYAY/TheGateway/raw/refs/heads/main/files/mGBA-0.10.4-win32-installer.exe">mGBA (Gameboy Emulator)</a>
-    </div>
-</div>
-        <div class="link-item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Citra_Logo.svg/1200px-Citra_Logo.svg.png" alt="Citra">
-        <a href="https://github.com/PabloMK7/citra/releases/download/r4f174f1/citra-windows-msvc-20240615-4f174f1.zip">Citra (3DS Emulator)</a>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrow Navigation</title>
-    <style>
-        /* Basic styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            display: block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
         }
 
-        /* Arrow styling */
+        .search_bar:focus {
+            box-shadow: 0 0 5px rgba(0, 148, 50, 0.5);
+            outline: none;
+        }
+
+        /* Arrow Button */
         .arrow-container {
             position: fixed;
             top: 50%;
@@ -157,11 +127,12 @@
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .arrow:hover {
             background-color: #45a049;
+            transform: scale(1.1);
         }
 
         .arrow:before {
@@ -169,16 +140,62 @@
             font-size: 30px;
             color: white;
         }
+
     </style>
 </head>
 <body>
 
-<!-- Main content of the page -->
-<div class="content">
-    <h1>Emulators</h1>
-</div>
+    <header>
+        Emulator Downloads
+    </header>
 
-<!-- Arrow to the right side of the screen -->
-<div class="arrow-container">
-    <div class="arrow" onclick="https://imadeagameyay.github.io/TheGateway/"></div>
-</div>
+    <!-- Banner Message -->
+    <div class="banner-message">
+        Find your favorite emulators below. Download and start playing today!
+    </div>
+
+    <!-- Search Bar -->
+    <input type="text" id="search-input" class="search_bar" placeholder="Search for emulators...">
+
+    <!-- Link Container for Emulators -->
+    <div class="link-container" id="game-list">
+        <div class="link-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Desmume.png" alt="DeSmuMe">
+            <a href="https://github.com/TASEmulators/desmume/releases/download/release_0_9_13/desmume-0.9.13-win64.zip" target="_blank">DeSmuMe (.nds, .gba Emulator)</a>
+        </div>
+        <div class="link-item">
+            <img src="https://images.sftcdn.net/images/t_app-icon-m/p/914c2226-4d36-4909-b8f6-7dbaaa27c2c6/1517778662/mgba-windows-1517778662.jpg" alt="mGBA">
+            <a href="https://github.com/IMADEAGAMEYAY/TheGateway/raw/refs/heads/main/files/mGBA-0.10.4-win32-installer.exe" target="_blank">mGBA (Gameboy Emulator)</a>
+        </div>
+        <div class="link-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Citra_Logo.svg/1200px-Citra_Logo.svg.png" alt="Citra">
+            <a href="https://github.com/PabloMK7/citra/releases/download/r4f174f1/citra-windows-msvc-20240615-4f174f1.zip" target="_blank">Citra (3DS Emulator)</a>
+        </div>
+    </div>
+
+    <!-- Arrow Button to Redirect -->
+    <div class="arrow-container">
+        <div class="arrow" onclick="window.location.href='https://imadeagameyay.github.io/TheGateway/'"></div>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const gameList = document.getElementById('game-list');
+        const games = gameList.children;
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            for (let i = 0; i < games.length; i++) {
+                const game = games[i];
+                const gameText = game.textContent.toLowerCase();
+                if (gameText.includes(searchTerm)) {
+                    game.style.display = 'block';
+                } else {
+                    game.style.display = 'none';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html

@@ -174,10 +174,17 @@
     </div>
 
     <!-- Arrow Button to Redirect -->
-    <div class="arrow-container">
-        <div class="arrow" onclick="window.location.href='https://imadeagameyay.github.io/TheGateway/'"></div>
-    </div>
-
+    <!-- Arrow to the right side of the screen -->
+<div class="arrow-container">
+    <div class="arrow" id="clickable-div"></div>
+</div>
+<a id="hidden-link" href="https://imadeagameyay.github.io/TheGateway/" style="display: none;"></a>
+    <script>
+        // When the div is clicked, the hidden link is triggered
+        document.getElementById('clickable-div').onclick = function() {
+            document.getElementById('hidden-link').click();
+        }
+    </script>
     <script>
         const searchInput = document.getElementById('search-input');
         const gameList = document.getElementById('game-list');
@@ -198,4 +205,5 @@
     </script>
 
 </body>
-</html
+</html>
+
